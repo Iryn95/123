@@ -79,7 +79,7 @@ h6 {
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1279px) {
   .container {
     width: 768px;
   }
@@ -122,6 +122,20 @@ h6 {
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: #d41443;
+  transform: scale(1);
+  animation: pulse 3000ms ease-in-out 3;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  to {
+    transform: scale(1);
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -177,7 +191,7 @@ h6 {
 }
 
 @media screen and (min-width: 768px) {
-  .products-list {
+  .products__list {
     display: flex;
     align-items: flex-start;
     margin-right: -10px;
@@ -186,19 +200,27 @@ h6 {
 }
 
 @media screen and (min-width: 1280px) {
-  .products-list {
+  .products__list {
     margin-right: -12px;
     margin-left: -12px;
   }
 }
 
-.products-list__item {
+.products__item {
   position: relative;
   border-radius: 24px;
   padding-bottom: 40px;
+  transform: scale(1);
+  transition: transform 250ms linear;
+  box-shadow: 0px 4px 4px rgba(212, 20, 67, 0.1);
 }
 
-.products-list__item::before {
+.products__item:hover, .products__item:focus {
+  transform: scale(1.05);
+  box-shadow: 0px 8px 8px rgba(122, 23, 48, 0.25);
+}
+
+.products__item::before {
   content: '';
   background-repeat: no-repeat;
   background-size: cover;
@@ -213,142 +235,142 @@ h6 {
 }
 
 @media screen and (min-width: 768px) {
-  .products-list__item::before {
+  .products__item::before {
     width: 220px;
     height: 225px;
   }
 }
 
 @media screen and (min-width: 1280px) {
-  .products-list__item::before {
+  .products__item::before {
     width: 335px;
     height: 335px;
     transform: translate(-50%, -65%);
   }
 }
 
-.products-list__item:nth-child(1) {
+.products__item:nth-child(1) {
   background-color: var(--second-bg);
 }
 
-.products-list__item:nth-child(1):before {
+.products__item:nth-child(1):before {
   background-image: url(../img/ice-creammob.png);
 }
 
 @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
-  .products-list__item:nth-child(1):before {
+  .products__item:nth-child(1):before {
     background-image: url(../img/ice-creammob2x.png);
   }
 }
 
 @media screen and (min-width: 768px) {
-  .products-list__item:nth-child(1):before {
+  .products__item:nth-child(1):before {
     background-image: url(../img/ice-creamtab.png);
   }
 }
 
 @media screen and (min-width: 768px) and (min-device-pixel-ratio: 2), screen and (min-width: 768px) and (min-resolution: 192dpi), screen and (min-width: 768px) and (min-resolution: 2dppx) {
-  .products-list__item:nth-child(1):before {
+  .products__item:nth-child(1):before {
     background-image: url(../img/ice-creamtab2x.png);
   }
 }
 
 @media screen and (min-width: 1280px) {
-  .products-list__item:nth-child(1):before {
+  .products__item:nth-child(1):before {
     background-image: url(../img/ice-creamdesc.png);
   }
 }
 
 @media screen and (min-width: 1280px) and (min-device-pixel-ratio: 2), screen and (min-width: 1280px) and (min-resolution: 192dpi), screen and (min-width: 1280px) and (min-resolution: 2dppx) {
-  .products-list__item:nth-child(1):before {
+  .products__item:nth-child(1):before {
     background-image: url(../img/ice-creamdesc2x.png);
   }
 }
 
-.products-list__item:nth-child(2) {
+.products__item:nth-child(2) {
   background-color: #f0d1a5;
 }
 
-.products-list__item:nth-child(2):before {
+.products__item:nth-child(2):before {
   background-image: url(../img/latemob.png);
 }
 
 @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
-  .products-list__item:nth-child(2):before {
+  .products__item:nth-child(2):before {
     background-image: url(../img/latemob2x.png);
   }
 }
 
 @media screen and (min-width: 768px) {
-  .products-list__item:nth-child(2):before {
+  .products__item:nth-child(2):before {
     background-image: url(../img/latetab.png);
   }
 }
 
 @media screen and (min-width: 768px) and (min-device-pixel-ratio: 2), screen and (min-width: 768px) and (min-resolution: 192dpi), screen and (min-width: 768px) and (min-resolution: 2dppx) {
-  .products-list__item:nth-child(2):before {
+  .products__item:nth-child(2):before {
     background-image: url(../img/latetab2x.png);
   }
 }
 
 @media screen and (min-width: 1280px) {
-  .products-list__item:nth-child(2):before {
+  .products__item:nth-child(2):before {
     background-image: url(../img/latedesc.png);
   }
 }
 
 @media screen and (min-width: 1280px) and (min-device-pixel-ratio: 2), screen and (min-width: 1280px) and (min-resolution: 192dpi), screen and (min-width: 1280px) and (min-resolution: 2dppx) {
-  .products-list__item:nth-child(2):before {
+  .products__item:nth-child(2):before {
     background-image: url(../img/latedesc2x.png);
   }
 }
 
-.products-list__item:nth-child(3) {
+.products__item:nth-child(3) {
   background-color: #c2e297;
 }
 
-.products-list__item:nth-child(3):before {
+.products__item:nth-child(3):before {
   background-image: url(../img/milkmob.png);
 }
 
 @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
-  .products-list__item:nth-child(3):before {
+  .products__item:nth-child(3):before {
     background-image: url(../img/milkmob2x.png);
   }
 }
 
 @media screen and (min-width: 768px) {
-  .products-list__item:nth-child(3):before {
+  .products__item:nth-child(3):before {
     background-image: url(../img/milktab.png);
   }
 }
 
 @media screen and (min-width: 768px) and (min-device-pixel-ratio: 2), screen and (min-width: 768px) and (min-resolution: 192dpi), screen and (min-width: 768px) and (min-resolution: 2dppx) {
-  .products-list__item:nth-child(3):before {
+  .products__item:nth-child(3):before {
     background-image: url(../img/milktab2x.png);
   }
 }
 
 @media screen and (min-width: 1280px) {
-  .products-list__item:nth-child(3):before {
+  .products__item:nth-child(3):before {
     background-image: url(../img/milkdesk.png);
   }
 }
 
 @media screen and (min-width: 1280px) and (min-device-pixel-ratio: 2), screen and (min-width: 1280px) and (min-resolution: 192dpi), screen and (min-width: 1280px) and (min-resolution: 2dppx) {
-  .products-list__item:nth-child(3):before {
+  .products__item:nth-child(3):before {
     background-image: url(../img/milkdesk2x.png);
   }
 }
 
 @media screen and (max-width: 767px) {
-  .products-list__item:not(:last-child) {
+  .products__item:not(:last-child) {
     margin-bottom: 130px;
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1279px) {
-  .products-list__item {
+  .products__item {
     flex-basis: calc(100% / 3 - 20px);
     margin-right: 10px;
     margin-left: 10px;
@@ -357,13 +379,58 @@ h6 {
 }
 
 @media screen and (min-width: 1280px) {
-  .products-list__item {
+  .products__item {
     flex-basis: calc(100% / 3 - 24px);
     margin-right: 12px;
     margin-left: 12px;
     margin-top: 210px;
     padding-bottom: 50px;
   }
+}
+
+.products__item--one {
+  transition: opacity 1200ms cubic-bezier(0.4, 0, 0.2, 1), transform 1200ms cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translate(0, -20%) scale(1.2);
+  opacity: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .products__item--one {
+    transform: translate(-40%, -20%) scale(1.2);
+  }
+}
+
+.products__item--one.element-show {
+  transform: translate(0) scale(1);
+  opacity: 1;
+}
+
+.products__item--two {
+  transition: opacity 1200ms cubic-bezier(0.4, 0, 0.2, 1), transform 1200ms cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translate(0, -20%) scale(1.2);
+  opacity: 0;
+}
+
+.products__item--two.element-show {
+  transform: translate(0) scale(1);
+  opacity: 1;
+}
+
+.products__item--three {
+  transition: opacity 1200ms cubic-bezier(0.4, 0, 0.2, 1), transform 1200ms cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translate(0, -20%) scale(1.2);
+  opacity: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .products__item--three {
+    transform: translate(40%, -20%) scale(1.2);
+  }
+}
+
+.products__item--three.element-show {
+  transform: translate(0) scale(1);
+  opacity: 1;
 }
 
 .products__checkbox {
@@ -499,6 +566,7 @@ h6 {
 .products__label:hover, .products__label:focus {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
   background-color: #ecebeb;
+  transform: scale(1.1) rotate(-90deg);
 }
 
 @media screen and (min-width: 768px) {
@@ -515,50 +583,5 @@ h6 {
 
 .products__icon {
   fill: #d41443;
-}
-
-.product-list__one {
-  transition: opacity 1200ms cubic-bezier(0.4, 0, 0.2, 1), transform 1200ms cubic-bezier(0.4, 0, 0.2, 1);
-  transform: translate(0, -20%) scale(1.2);
-  opacity: 0;
-}
-
-@media screen and (min-width: 768px) {
-  .product-list__one {
-    transform: translate(-40%, -20%) scale(1.2);
-  }
-}
-
-.product-list__one.element-show {
-  transform: translate(0) scale(1);
-  opacity: 1;
-}
-
-.product-list__two {
-  transition: opacity 1200ms cubic-bezier(0.4, 0, 0.2, 1), transform 1200ms cubic-bezier(0.4, 0, 0.2, 1);
-  transform: translate(0, -20%) scale(1.2);
-  opacity: 0;
-}
-
-.product-list__two.element-show {
-  transform: translate(0) scale(1);
-  opacity: 1;
-}
-
-.product-list__three {
-  transition: opacity 1200ms cubic-bezier(0.4, 0, 0.2, 1), transform 1200ms cubic-bezier(0.4, 0, 0.2, 1);
-  transform: translate(0, -20%) scale(1.2);
-  opacity: 0;
-}
-
-@media screen and (min-width: 768px) {
-  .product-list__three {
-    transform: translate(40%, -20%) scale(1.2);
-  }
-}
-
-.product-list__three.element-show {
-  transform: translate(0) scale(1);
-  opacity: 1;
 }
 /*# sourceMappingURL=main.css.map */
